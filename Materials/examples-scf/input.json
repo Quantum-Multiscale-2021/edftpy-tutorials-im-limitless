@@ -1,0 +1,362 @@
+{
+    "JOB": {
+        "task": "Optdensity",
+        "calctype": [
+            "Energy"
+        ]
+    },
+    "PATH": {
+        "pp": "./",
+        "cell": "./"
+    },
+    "PP": {
+        "O": "O_ONCV_PBE-1.2.upf",
+        "H": "H_ONCV_PBE-1.2.upf"
+    },
+    "OUTPUT": {
+        "electrostatic_potential": null,
+        "sub_temp": false,
+        "time": true
+    },
+    "OPT": {
+        "method": "Normal",
+        "econv": 1e-06,
+        "pconv": null,
+        "maxiter": 200,
+        "ncheck": 2,
+        "olevel": 2,
+        "sdft": "sdft",
+        "maxtime": 0
+    },
+    "GSYSTEM": {
+        "cell": {
+            "file": "h2o_2.xyz",
+            "elename": [
+                "Al"
+            ],
+            "zval": null,
+            "format": null
+        },
+        "grid": {
+            "optfft": true,
+            "ecut": 1200,
+            "spacing": 0.1770193311814933,
+            "gfull": false,
+            "nr": null,
+            "maxprime": 13,
+            "scale": 0.99,
+            "cplx": false
+        },
+        "density": {
+            "nspin": 1,
+            "ncharge": null,
+            "magmom": 0,
+            "file": null,
+            "output": "total.xsf"
+        },
+        "exc": {
+            "xc": null,
+            "x_str": "gga_x_pbe",
+            "c_str": "gga_c_pbe"
+        },
+        "kedf": {
+            "kedf": "GGA",
+            "interp": "linear",
+            "delta": 0.3,
+            "kdd": 1,
+            "k_str": "revAPBEK",
+            "x": 1,
+            "y": 1,
+            "alpha": 0.8333333333333333,
+            "beta": 0.8333333333333333,
+            "sigma": null,
+            "nsp": null,
+            "kerneltype": "WT",
+            "symmetrization": null,
+            "lumpfactor": null,
+            "neta": 50000,
+            "etamax": 50,
+            "order": 3,
+            "ratio": 1.2,
+            "maxpoints": 1000,
+            "rho0": null,
+            "params": null,
+            "kfmin": null,
+            "kfmax": null,
+            "rhomax": null,
+            "ldw": null,
+            "name": "GGA"
+        },
+        "decompose": {
+            "method": "manual",
+            "adaptive": "manual",
+            "rcut": 3,
+            "radius": {}
+        }
+    },
+    "SUB_KS_0": {
+        "cell": {
+            "file": null,
+            "split": [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "cut": 0,
+            "index": [
+                0,
+                1,
+                2
+            ],
+            "elename": [
+                "Al"
+            ],
+            "zval": null,
+            "format": null
+        },
+        "grid": {
+            "ecut": 2400,
+            "optfft": true,
+            "spacing": 0.1251715694795412,
+            "gfull": false,
+            "nr": null,
+            "maxprime": 13,
+            "scale": 0.99,
+            "cplx": false
+        },
+        "density": {
+            "nspin": 1,
+            "ncharge": null,
+            "magmom": 0,
+            "file": null,
+            "output": "sub_ks_0.xsf",
+            "initial": null,
+            "atomic": {},
+            "use_gaussians": false,
+            "gaussians_rcut": 3,
+            "gaussians_sigma": 0.3,
+            "gaussians_scale": {}
+        },
+        "exc": {
+            "xc": null,
+            "x_str": null,
+            "c_str": null
+        },
+        "kedf": {
+            "kedf": "WT",
+            "x": 1,
+            "y": 1,
+            "alpha": 0.8333333333333333,
+            "beta": 0.8333333333333333,
+            "sigma": null,
+            "nsp": null,
+            "interp": "hermite",
+            "kerneltype": "WT",
+            "symmetrization": null,
+            "lumpfactor": null,
+            "neta": 50000,
+            "etamax": 50,
+            "order": 3,
+            "ratio": 1.2,
+            "maxpoints": 1000,
+            "delta": null,
+            "kdd": 3,
+            "rho0": null,
+            "k_str": "gga_k_revapbe",
+            "params": null,
+            "kfmin": null,
+            "kfmax": null,
+            "rhomax": null,
+            "ldw": null,
+            "name": "WT"
+        },
+        "decompose": {
+            "method": "manual",
+            "adaptive": "manual",
+            "rcut": 3,
+            "radius": {}
+        },
+        "mix": {
+            "scheme": null,
+            "predtype": "kerker",
+            "predcoef": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "predecut": null,
+            "maxm": 7,
+            "coef": 0.7,
+            "delay": 2,
+            "restarted": false,
+            "kf": "auto"
+        },
+        "opt": {
+            "opt_method": "full",
+            "maxiter": 800,
+            "update_sleep": 0,
+            "update_delay": 0,
+            "update_freq": 1,
+            "method": "CG-HS",
+            "algorithm": "EMM",
+            "vector": "Orthogonalization",
+            "c1": 0.0001,
+            "c2": 0.2,
+            "maxls": 10,
+            "econv": 1e-06,
+            "maxfun": 50,
+            "xtol": 1e-12,
+            "h0": 1
+        },
+        "kpoints": {
+            "method": "auto",
+            "grid": null,
+            "offset": null
+        },
+        "subs": null,
+        "calculator": "qe",
+        "technique": "KS",
+        "nprocs": 1,
+        "embed": [
+            "KE"
+        ],
+        "exttype": null,
+        "basefile": null,
+        "prefix": "sub_ks_0",
+        "task": null,
+        "hash": "13aa953ffd407cd17c9d46c6e6af2f3d"
+    },
+    "SUB_KS_1": {
+        "cell": {
+            "file": null,
+            "split": [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "cut": 0,
+            "index": [
+                3,
+                4,
+                5
+            ],
+            "elename": [
+                "Al"
+            ],
+            "zval": null,
+            "format": null
+        },
+        "grid": {
+            "ecut": 2400,
+            "optfft": true,
+            "spacing": 0.1251715694795412,
+            "gfull": false,
+            "nr": null,
+            "maxprime": 13,
+            "scale": 0.99,
+            "cplx": false
+        },
+        "density": {
+            "nspin": 1,
+            "ncharge": null,
+            "magmom": 0,
+            "file": null,
+            "output": null,
+            "initial": null,
+            "atomic": {},
+            "use_gaussians": false,
+            "gaussians_rcut": 3,
+            "gaussians_sigma": 0.3,
+            "gaussians_scale": {}
+        },
+        "exc": {
+            "xc": null,
+            "x_str": null,
+            "c_str": null
+        },
+        "kedf": {
+            "kedf": "WT",
+            "x": 1,
+            "y": 1,
+            "alpha": 0.8333333333333333,
+            "beta": 0.8333333333333333,
+            "sigma": null,
+            "nsp": null,
+            "interp": "hermite",
+            "kerneltype": "WT",
+            "symmetrization": null,
+            "lumpfactor": null,
+            "neta": 50000,
+            "etamax": 50,
+            "order": 3,
+            "ratio": 1.2,
+            "maxpoints": 1000,
+            "delta": null,
+            "kdd": 3,
+            "rho0": null,
+            "k_str": "gga_k_revapbe",
+            "params": null,
+            "kfmin": null,
+            "kfmax": null,
+            "rhomax": null,
+            "ldw": null,
+            "name": "WT"
+        },
+        "decompose": {
+            "method": "manual",
+            "adaptive": "manual",
+            "rcut": 3,
+            "radius": {}
+        },
+        "mix": {
+            "scheme": null,
+            "predtype": "kerker",
+            "predcoef": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "predecut": null,
+            "maxm": 7,
+            "coef": 0.7,
+            "delay": 2,
+            "restarted": false,
+            "kf": "auto"
+        },
+        "opt": {
+            "opt_method": "full",
+            "maxiter": 800,
+            "update_sleep": 0,
+            "update_delay": 0,
+            "update_freq": 1,
+            "method": "CG-HS",
+            "algorithm": "EMM",
+            "vector": "Orthogonalization",
+            "c1": 0.0001,
+            "c2": 0.2,
+            "maxls": 10,
+            "econv": 1e-06,
+            "maxfun": 50,
+            "xtol": 1e-12,
+            "h0": 1
+        },
+        "kpoints": {
+            "method": "auto",
+            "grid": null,
+            "offset": null
+        },
+        "subs": null,
+        "calculator": "qe",
+        "technique": "KS",
+        "nprocs": 1,
+        "embed": [
+            "KE",
+            "XC"
+        ],
+        "exttype": null,
+        "basefile": null,
+        "prefix": "sub_ks_1",
+        "task": null,
+        "hash": "0887092307cb97a60a37f828161dee12"
+    }
+}
